@@ -1,0 +1,79 @@
+.main-bg {
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding: 0;
+}
+
+.activity-container {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.activity-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+.activity-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.activity-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 0;
+}
+
+.activity-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 160px;
+}
+
+.activity-field label {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.activity-field input,
+.activity-field select,
+.activity-field textarea {
+  border: 1px solid #d3d6e2;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 15px;
+  background: #fafbfc;
+  margin-bottom: 0;
+}
+
+.activity-field textarea {
+  min-height: 40px;
+  resize: vertical;
+}
+
+.activity-btn {
+  background: #2ca02c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.activity-btn:hover {
+  background: #238c23;
+}
