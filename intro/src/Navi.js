@@ -12,6 +12,7 @@ const Navi = () => {
             <span className="navi-logo-text">soft</span>
           </div>
           <hr className="navi-divider" />
+          {/* Menü alt çizgi */}
           <div className="navi-menu">
             <span className="navi-menu-item">Anasayfa</span>
             <span className="navi-menu-item">Sistem ▼</span>
@@ -37,5 +38,4 @@ const Navi = () => {
     </div>
   );
 };
-
 export default Navi;
