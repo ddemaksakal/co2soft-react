@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
+// React Router için gerekli importlar 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navi from './Navi';
 import ActivitiesTable from './ActivitiesTable';
 import ActivityForm from './ActivityForm';
 import './App.css';
 
+const Home = () => (
+  <div style={{ padding: 20 }}>
+    {/* Anasayfa boş */}
+  </div>
+);
+
 const App = () => {
-  // Formun açık olup olmadığını tutan state
-  const [showForm, setShowForm] = useState(false);
-
-  // "Yeni Aktivite" butonuna tıklanınca form açılsın
-  const handleNewActivity = () => setShowForm(true);
-
-  // Formdan geri dönünce tabloya dön
-  const handleCloseForm = () => setShowForm(false);
-
   return (
-    <div className="main-bg">
-      <Navi />
-      {/* Eğer form açıksa formu, değilse tabloyu göster */}
-      {showForm ? (
-        <ActivityForm onClose={handleCloseForm} />
-      ) : (
-        <ActivitiesTable onNewActivity={handleNewActivity} />
-      )}
-    </div>
+    <Router>
+      <div className="main-bg">
+        <Navi />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/activities" element={<ActivitiesTable />} />
+          <Route path="/activities/new" element={<ActivityForm />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 

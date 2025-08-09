@@ -2,25 +2,24 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import './App.css';
 
-// Örnek veriler
 const dummyData = [
   { sira: 1, faktor: "_", ad: "Doğrudan Emisyonlar", durum: 'Aktif', tipler: ' ', islemler: '...' },
   { sira: 2, faktor: '010_010 - Doğrudan Emisyonlar', ad: "Sabit Yanma", durum: 'Aktif', tipler: '', islemler: '...' },
 ];
-
-const ActivitiesTable = () => {
+// ActivitiesPage bileşeni, aktiviteleri listeleyen ve yeni aktivite ekleme butonu içeren bir sayfa
+// useNavigate fonksiyonu ile yeni aktivite formuna yönlendirme yapılıyor
+const ActivitiesPage = () => {
   const navigate = useNavigate();
 
-  const handleNewActivity = () => {
-    navigate('/activities/new'); // fonksiyon çalıştırılıp route'a  yönlendiriyoruz
-  };
-
+// Yeni aktivite ekleme butonu tıklandığında /activities/new route'una yönlendirir
   return (
     <div className="activity-container">
       <h2 className="activity-title">Aktiviteler</h2>
       <div className="activity-card">
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 16 }}>
-          <button className="activity-btn" onClick={handleNewActivity}>Yeni Aktivite</button>
+          <button className="activity-btn" onClick={() => navigate('/activities/new')}>
+            Yeni Aktivite
+          </button>
         </div>
         <table className="activity-table">
           <thead>
@@ -34,8 +33,8 @@ const ActivitiesTable = () => {
             </tr>
           </thead>
           <tbody>
-            {dummyData.map((activity, index) => (
-              <tr key={index}>
+            {dummyData.map((activity) => (
+              <tr key={activity.sira}>
                 <td>{activity.sira}</td>
                 <td>{activity.faktor}</td>
                 <td>{activity.ad}</td>
@@ -51,4 +50,4 @@ const ActivitiesTable = () => {
   );
 };
 
-export default ActivitiesTable;
+export default ActivitiesPage;

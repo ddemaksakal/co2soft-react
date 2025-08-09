@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';  // Link import edildi
 import './Navi.css';
 
 const Navi = () => {
@@ -14,9 +15,9 @@ const Navi = () => {
           <hr className="navi-divider" />
           {/* Menü alt çizgi */}
           <div className="navi-menu">
-            <span className="navi-menu-item">Anasayfa</span>
-            <span className="navi-menu-item">Sistem ▼</span>
-            <span className="navi-menu-item">Organizasyonlar</span>
+            {/* Span yerine Link bileşenleri kullanıldı */}
+            <Link to="/" className="navi-menu-item">Anasayfa</Link>
+            <Link to="/activities" className="navi-menu-item">Aktiviteler</Link>
           </div>
         </div>
         {/* Sağ: İkonlar ve Profil */}
@@ -38,4 +39,5 @@ const Navi = () => {
     </div>
   );
 };
+
 export default Navi;
